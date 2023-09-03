@@ -367,18 +367,6 @@ export default function InstructionsComponent() {
     );
   }
 
-  // Function for timestamo
-  function CurrentTime() {
-    // Getting current timestamp in seconds
-    const currentTimestamp = Math.floor(Date.now() / 1000);
-
-    return (
-      <div>
-        <p>Current time is: {currentTimestamp}</p>
-      </div>
-    );
-  }
-
   // READ FUNCTIONS
 
   /**
@@ -466,7 +454,7 @@ const DisplayContract: React.FC = () => {
 
   return (
     <div>
-      <button onClick={openNewWindow}>
+      <button onClick={openNewWindow} className={styles.button}>
         View the Auction.sol Contract in a New Window
       </button>
     </div>
@@ -491,7 +479,7 @@ const DisplayTests: React.FC = () => {
 
   return (
     <div>
-      <button onClick={openNewWindow}>
+      <button onClick={openNewWindow} className={styles.button}>
         View the Auction.sol Contract TESTS in a New Window
       </button>
     </div>
@@ -541,7 +529,7 @@ function GetCurrentBid() {
   if (isLoading) return <div>Fetching Current Bid....</div>;
   if (isError) return <div>Error fetching Current Bid</div>;
   if (currentBid == 0)
-    return <div>Current Bid: Starting Soon...🙇 ٩̋(ᵔ ᵕ ᵔ)و</div>;
+    return <div>Current Bid: Starting Soon...🙇 🙇 ٩̋(ᵔ ᵕ ᵔ)و</div>;
   return <div>Current Bid: {currentBid.toString()}</div>;
 }
 
