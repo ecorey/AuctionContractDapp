@@ -322,10 +322,10 @@ export default function InstructionsComponent() {
         <div>
           <DeployedTime></DeployedTime>
           <AuctionLive></AuctionLive>
-          <AuctionItem></AuctionItem>
-          <GetCurrentBid></GetCurrentBid>
           <StartTime></StartTime>
           <StopTime></StopTime>
+          <AuctionItem></AuctionItem>
+          <GetCurrentBid></GetCurrentBid>
           <Winner></Winner>
           <DisplayContract></DisplayContract>
           <DisplayTests></DisplayTests>
