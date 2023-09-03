@@ -3,7 +3,7 @@ import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const DisplayContractCode = () => {
   const codeContract = `
-  // SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: MIT
 
 pragma solidity 0.8.19;
 

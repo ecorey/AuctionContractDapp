@@ -17,9 +17,9 @@ function CurrentTime() {
     };
   }, []);
   return (
-    <div>
+    <h4>
       <p>Current time is: {currentTimestamp}</p>
-    </div>
+    </h4>
   );
 }
 

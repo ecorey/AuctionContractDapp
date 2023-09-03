@@ -17,6 +17,7 @@ import { useRouter } from "next/router";
 import DisplayContractCode from "./codeDisplay";
 import DisplayContractTests from "./testDisplay";
 import ReactDOMServer from "react-dom/server";
+import Ticker from "./ticker";
 
 // fix this hard code to another file
 const contractABI = [
@@ -281,8 +282,8 @@ export default function InstructionsComponent() {
       <header className={styles.header_container}>
         <div className={styles.header}>
           <h1>'YOU DROPPED THIS KING' </h1>
-          <h1>AUCTION</h1>
-          <h1>Limited Time</h1>
+          <h2>AUCTION CLEARING HOUSE</h2>
+          <h3>Limited Time</h3>
         </div>
       </header>
       <p className={styles.get_started}>
@@ -298,6 +299,7 @@ export default function InstructionsComponent() {
     return (
       <div>
         <WalletInfo></WalletInfo>
+        <Ticker></Ticker>
       </div>
     );
   }
@@ -498,4 +500,3 @@ const DisplayTests: React.FC = () => {
     </div>
   );
 };
-
