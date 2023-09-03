@@ -3,6 +3,12 @@ import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const DisplayContractCode = () => {
   const codeContract = `
+
+Etherscan Details: https://sepolia.etherscan.io/address/0x22090522d78127110f260131e0743228098db04a#code  
+Contract Address: 0x22090522d78127110f260131E0743228098Db04A
+Website: YouDroppedThisKing.com
+
+
 // SPDX-License-Identifier: MIT
 
 pragma solidity 0.8.19;

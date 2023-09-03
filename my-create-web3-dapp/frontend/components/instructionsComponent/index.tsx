@@ -299,7 +299,6 @@ export default function InstructionsComponent() {
     return (
       <div>
         <WalletInfo></WalletInfo>
-        <Ticker></Ticker>
       </div>
     );
   }
@@ -321,14 +320,8 @@ export default function InstructionsComponent() {
     if (address)
       return (
         <div>
-          <WalletBalance address={address}></WalletBalance>
           <DeployedTime></DeployedTime>
           <AuctionLive></AuctionLive>
-          <Owner></Owner>
-          <>
-            Etherscan Details:
-            https://sepolia.etherscan.io/address/0x22090522d78127110f260131e0743228098db04a#code{" "}
-          </>
           <DisplayContract></DisplayContract>
           <DisplayTests></DisplayTests>
         </div>

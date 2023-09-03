@@ -1,17 +1,29 @@
-
-
 .navbar {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	width: 100%;
-	padding: 2rem 4rem 0.8rem 4rem;
-	gap: 2rem;
-	margin-bottom: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 2rem 4rem 0.8rem 4rem;
+  gap: 2rem;
+  margin-bottom: 4rem;
 }
 
+.alchemy_logo {
+  width: 6rem;
+  cursor: pointer;
+}
 
-.alchemy_logo{
-	width: 6rem;
-	cursor: pointer;
+.container2 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 50px;
+  align-items: center;
+  justify-content: space-between;
+
+  /*  places background image in the main app */
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
