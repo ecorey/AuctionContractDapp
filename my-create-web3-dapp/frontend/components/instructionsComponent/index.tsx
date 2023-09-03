@@ -322,6 +322,11 @@ export default function InstructionsComponent() {
         <div>
           <DeployedTime></DeployedTime>
           <AuctionLive></AuctionLive>
+          <AuctionItem></AuctionItem>
+          <GetCurrentBid></GetCurrentBid>
+          <StartTime></StartTime>
+          <StopTime></StopTime>
+          <Winner></Winner>
           <DisplayContract></DisplayContract>
           <DisplayTests></DisplayTests>
         </div>
@@ -436,7 +441,6 @@ function DeployedTime() {
     },
   });
 
-  // const deployedT = typeof data === "string" ? data.toString() : 0;
   const deployedT: any = data;
 
   if (isLoading) return <div>Fetching deployed time....</div>;
@@ -493,3 +497,117 @@ const DisplayTests: React.FC = () => {
     </div>
   );
 };
+
+// DOES NOT NEED STATE AS STAYS SAME FOR AUCTION
+function AuctionItem() {
+  const { data, isError, isLoading } = useContractRead({
+    address: "0x22090522d78127110f260131E0743228098Db04A",
+    abi: contractABI,
+
+    functionName: "getAuctionItem",
+    onSuccess(data) {
+      console.log("Success Data:", data, "Type:", typeof data);
+    },
+    onError(error) {
+      console.log("Error", error);
+    },
+  });
+
+  const auctionItem = typeof data === "string" ? data : 0;
+
+  if (isLoading) return <div>Fetching Auction Item....</div>;
+  if (isError) return <div>Error fetching Auction Item</div>;
+  if (auctionItem == "") return <div>Auction Item: Coming Soon 🔥🔥🔥</div>;
+  return <div>Auction Item: {auctionItem}</div>;
+}
+
+// NEEDS TO BE A STATE SO ITS UPDATED
+function GetCurrentBid() {
+  const { data, isError, isLoading } = useContractRead({
+    address: "0x22090522d78127110f260131E0743228098Db04A",
+    abi: contractABI,
+
+    functionName: "getCurrentBid",
+    onSuccess(data) {
+      console.log("Success Data:", data, "Type:", typeof data);
+    },
+    onError(error) {
+      console.log("Error", error);
+    },
+  });
+
+  const currentBid: any = data;
+
+  if (isLoading) return <div>Fetching Current Bid....</div>;
+  if (isError) return <div>Error fetching Current Bid</div>;
+  if (currentBid == 0)
+    return <div>Current Bid: Starting Soon...🙇 ٩̋(ᵔ ᵕ ᵔ)و</div>;
+  return <div>Current Bid: {currentBid.toString()}</div>;
+}
+
+function StartTime() {
+  const { data, isError, isLoading } = useContractRead({
+    address: "0x22090522d78127110f260131E0743228098Db04A",
+    abi: contractABI,
+
+    functionName: "getStartTime",
+    onSuccess(data) {
+      console.log("Success Data:", data, "Type:", typeof data);
+    },
+    onError(error) {
+      console.log("Error", error);
+    },
+  });
+
+  const startTime: any = data;
+
+  if (isLoading) return <div>Fetching Start Time....</div>;
+  if (isError) return <div>Error Fetchting Start Time</div>;
+  if (startTime == 0) return <div>Start Time: Not Set ⏱️ ⏱️ </div>;
+  return <div>Current Bid: {startTime.toString()}</div>;
+}
+
+function StopTime() {
+  const { data, isError, isLoading } = useContractRead({
+    address: "0x22090522d78127110f260131E0743228098Db04A",
+    abi: contractABI,
+
+    functionName: "getStopTime",
+    onSuccess(data) {
+      console.log("Success Data:", data, "Type:", typeof data);
+    },
+    onError(error) {
+      console.log("Error", error);
+    },
+  });
+
+  const stopTime: any = data;
+
+  if (isLoading) return <div>Fetching Stop Time....</div>;
+  if (isError) return <div>Error Fetchting Stop Time</div>;
+  if (stopTime == 0) return <div>Stop Time: Not Set ⏰ ⏰ </div>;
+  return <div>Current Bid: {stopTime.toString()}</div>;
+}
+
+function Winner() {
+  const { data, isError, isLoading } = useContractRead({
+    address: "0x22090522d78127110f260131E0743228098Db04A",
+    abi: contractABI,
+
+    functionName: "winner",
+    onSuccess(data) {
+      console.log("Success Data:", data, "Type:", typeof data);
+    },
+    onError(error) {
+      console.log("Error", error);
+    },
+  });
+
+  const winner: any = data;
+
+  if (isLoading) return <div>Fetching Winner....</div>;
+  if (isError) return <div>Error Fetchting Winner</div>;
+  if (winner[0] == 0x0000000000000000000000000000000000000000)
+    return <div>Winner: Undecided 😱 🤑 😎</div>;
+  return <div>Winner: {winner.toString()}</div>;
+}
