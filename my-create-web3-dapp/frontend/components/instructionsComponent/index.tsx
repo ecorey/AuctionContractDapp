@@ -280,8 +280,9 @@ export default function InstructionsComponent() {
     <div className={styles.container}>
       <header className={styles.header_container}>
         <div className={styles.header}>
+          <h1>'YOU DROPPED THIS KING' </h1>
           <h1>AUCTION</h1>
-          <h1>Final Project</h1>
+          <h1>Limited Time</h1>
         </div>
       </header>
       <p className={styles.get_started}>

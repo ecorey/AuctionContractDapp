@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./footer.module.css";
-import myImage from "./images/cat1.png";
+import myImage from "./images/99.png";
 
 export default function Footer() {
   return (
